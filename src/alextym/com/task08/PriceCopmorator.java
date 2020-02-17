@@ -1,4 +1,5 @@
 package alextym.com.task08;
+
 import java.util.Comparator;
 
 public class PriceCopmorator implements Comparator {

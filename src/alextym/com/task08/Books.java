@@ -1,6 +1,6 @@
 package alextym.com.task08;
+
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class Books {
 
@@ -9,6 +9,30 @@ public class Books {
 
     public Books(int i) {
         books = new Book[i];
+    }
+
+    public static void compareAutorNames(Book[] books) {
+        System.out.println("---------AutourNameComporator--------------");
+        Arrays.sort(books, new AutourNameComporator());
+        for (Book elem : books) {
+            System.out.println(elem);
+        }
+    }
+
+    public static void comparePuplisherNames(Book[] books) {
+        System.out.println("------PuplisherNameComporator-------------------");
+        Arrays.sort(books, new PuplisherNameComporator());
+        for (Book elem : books) {
+            System.out.println(elem);
+        }
+    }
+
+    public static void comparePrices(Book[] books) {
+        System.out.println("-------PriceCopmorator---------------");
+        Arrays.sort(books, new PriceCopmorator());
+        for (Book elem : books) {
+            System.out.println(elem);
+        }
     }
 
     public Book[] getBooks() {
@@ -68,6 +92,4 @@ public class Books {
         }
         return Arrays.copyOf(search, count);
     }
-
-
 }

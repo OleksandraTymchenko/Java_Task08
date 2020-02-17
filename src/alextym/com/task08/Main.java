@@ -1,7 +1,8 @@
 package alextym.com.task08;
-import java.util.Arrays;
+
 import java.util.Scanner;
 
+import static alextym.com.task08.Books.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -40,28 +41,11 @@ public class Main {
         Books findBooksAfterYear = new Books(i);
         findBooksAfterYear.setBooks(books.searchBookYear(year));
         findBooksAfterYear.printBooks();
+        Book[] booksToCompare = {book1, book2, book3, book4, book5};
 
-
-        Book[] booksCompare = {book1, book2, book3, book4, book5};
-
-        System.out.println("---------AutourNameComporator--------------");
-        Arrays.sort( booksCompare, new  AutourNameComporator());
-        for (Book elem: booksCompare) {
-            System.out.println(elem);
-        }
-
-        System.out.println("------PuplisherNameComporator-------------------");
-        Arrays.sort( booksCompare, new  PuplisherNameComporator());
-        for (Book elem: booksCompare) {
-            System.out.println(elem);
-        }
-
-
-        System.out.println("-------PriceCopmorator---------------");
-        Arrays.sort( booksCompare, new PriceCopmorator());
-        for (Book elem: booksCompare) {
-            System.out.println(elem);
-        }
+        compareAutorNames(booksToCompare);
+        comparePuplisherNames(booksToCompare);
+        comparePrices(booksToCompare);
 
     }
 }
